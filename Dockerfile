@@ -9,7 +9,8 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the LibriScribe repository
-RUN git clone https://github.com/guerra2fernando/libriscribe.git /app
+# RUN git clone https://github.com/guerra2fernando/libriscribe.git /app
+COPY src /app
 
 # Install LibriScribe and its dependencies
 RUN pip install -e .

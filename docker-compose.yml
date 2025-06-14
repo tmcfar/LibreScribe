@@ -18,4 +18,5 @@ services:
     stdin_open: true
 
 volumes:
-  libriscribe_data:
+  - ./src:/app
+  - libriscribe_data:/app/data
