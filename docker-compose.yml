@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  libriscribe:
+    build: .
+    container_name: librescribe-dev
+    volumes:
+      - .:/app/custom
+      - libriscribe_data:/app/data
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CLAUDE_API_KEY=${CLAUDE_API_KEY}
+      - GOOGLE_AI_STUDIO_API_KEY=${GOOGLE_AI_STUDIO_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+    working_dir: /app
+    tty: true
+    stdin_open: true
+
+volumes:
+  libriscribe_data:
